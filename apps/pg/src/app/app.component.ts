@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ShellComponent } from '@pg/shell';
 
 @Component({
-  standalone: true,
-  imports: [RouterModule],
+  imports: [ShellComponent],
   selector: 'pg-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  standalone: true,
+  template: '<pg-shell></pg-shell>',
 })
 export class AppComponent {
   title = 'pg';

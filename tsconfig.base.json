@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@pg/shell": ["libs/pg/shell/src/index.ts"],
       "@pg/table": ["libs/shared/ui/table/src/index.ts"]
     }
   },
