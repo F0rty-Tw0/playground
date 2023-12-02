@@ -1,0 +1,26 @@
+<th class="header-col">
+  @if(type === 'icon'){
+  <ng-container *ngTemplateOutlet="icon"></ng-container>
+  } @else {
+  <ng-container *ngTemplateOutlet="arrow"></ng-container>
+  }
+  <ng-content></ng-content>
+</th>
+
+<ng-template #icon>
+  {{ header.label }}
+  @if(header.sortable){
+  <span class="header-col-sort" (click)="onSort()">
+    {{ sortDirection === 'asc' ? '🔼' : '🔽' }}
+  </span>
+  }
+</ng-template>
+
+<ng-template #arrow>
+  {{ header.label }}
+  @if(header.sortable){
+  <span class="header-col-sort" (click)="onSort()">
+    {{ sortDirection === 'asc' ? '↑' : '↓' }}
+  </span>
+  }
+</ng-template>

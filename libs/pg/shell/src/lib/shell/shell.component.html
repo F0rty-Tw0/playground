@@ -1,1 +1,46 @@
-<pg-table></pg-table>
+<div class="shell">
+  <pg-table
+    [tableHeaders]="airplaneHeaders"
+    [tableItems]="airplanes"
+    (sort)="onSortAirplanes()"
+  >
+    <div class="shell-banner">Airplanes Simple Table</div>
+  </pg-table>
+
+  <pg-table>
+    <div class="shell-banner">Cars Complex Table</div>
+    <ng-template #tableHeaderTemplate>
+      <pg-table-header #headerColTemplate>
+        @for(header of carHeaders; track $index) {
+        <pg-header-col
+          [header]="header"
+          type="icon"
+          (sort)="onSortCars()"
+        ></pg-header-col>
+        }
+        <ng-template></ng-template>
+      </pg-table-header>
+    </ng-template>
+
+    <ng-template #tableRowTemplate>
+      @for(car of cars; track $index) {
+      <pg-table-row [item]="cars">
+        <ng-template #tableColTemplate>
+          @for (header of carHeaders; track $index) { @switch (header.key) {
+          @case ('year') {
+          <pg-table-col [item]="car[header.key]" type="icon">
+            @if(!car.soldState) {
+            <button (click)="onBuy(car)">BUY</button>
+            }
+          </pg-table-col>
+          } @case ('price') {
+          <pg-table-col [item]="car[header.key]" type="icon">$ </pg-table-col>
+          } @default {
+          <pg-table-col [item]="car[header.key]" type="icon"> </pg-table-col>
+          }} }
+        </ng-template>
+      </pg-table-row>
+      }
+    </ng-template>
+  </pg-table>
+</div>

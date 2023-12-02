@@ -1,0 +1,10 @@
+<thead class="table-header">
+  <tr class="table-header">
+    <ng-content></ng-content>
+    @if (headerColTemplate) {
+    <ng-container *ngTemplateOutlet="headerColTemplate" />
+    } @else { @for (header of tableHeaders; track $index) {
+    <pg-header-col [header]="header" (sort)="onSort()" />
+    }}
+  </tr>
+</thead>

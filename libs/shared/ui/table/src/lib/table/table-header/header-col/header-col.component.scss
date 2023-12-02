@@ -1,0 +1,20 @@
+.header-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 36px;
+  height: 100%;
+  box-sizing: border-box;
+  font-weight: bold;
+  border: 1px solid #ccc;
+
+  &-sort {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+
+:host {
+  flex: 1;
+}

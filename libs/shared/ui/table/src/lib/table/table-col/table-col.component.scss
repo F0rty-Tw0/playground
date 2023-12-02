@@ -1,0 +1,12 @@
+.table-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 36px;
+  border: 1px solid #ccc;
+}
+
+:host {
+  flex: 1;
+}

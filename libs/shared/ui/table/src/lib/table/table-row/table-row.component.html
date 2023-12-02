@@ -1,0 +1,7 @@
+<tr class="table-row">
+  @if (tableColTemplate) {
+  <ng-container *ngTemplateOutlet="tableColTemplate" />
+  } @else { @for (header of headers; track $index) {
+  <pg-table-col [item]="item[header.key]" />
+  } }
+</tr>

@@ -1,0 +1,10 @@
+.shell {
+  display: flex;
+  gap: 50px;
+
+  &-banner {
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 24px;
+  }
+}
