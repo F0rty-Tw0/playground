@@ -1,0 +1,9 @@
+<tr class="table-editing-row">
+  Editing Row @for(header of headers; track $index) {
+  {{
+    item[header.key]
+  }}
+  }
+
+  <button (click)="onSave(item)">Save</button>
+</tr>

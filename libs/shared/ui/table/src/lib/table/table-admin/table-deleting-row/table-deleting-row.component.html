@@ -1,0 +1,9 @@
+<tr class="table-deleting-row">
+  Delete @for(header of headers; track $index) {
+  {{
+    item[header.key]
+  }}
+  }
+
+  <button (click)="onDelete(item)">Delete</button>
+</tr>

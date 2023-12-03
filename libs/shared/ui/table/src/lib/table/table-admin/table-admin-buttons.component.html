@@ -1,0 +1,4 @@
+<div class="table-admin-buttons">
+  <button [disabled]="isDeleting()" (click)="toggleEditing()">Edit</button>
+  <button [disabled]="isEditing()" (click)="toggleDeleting()">Delete</button>
+</div>

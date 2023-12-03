@@ -1,5 +1,11 @@
 <table class="table">
-  <ng-content></ng-content>
+  <div class="table-content">
+    <ng-content></ng-content>
+    @if(isAdmin) {
+    <pg-table-admin-buttons />
+    }
+  </div>
+
   @if (tableHeaderTemplate) {
   <ng-container *ngTemplateOutlet="tableHeaderTemplate" />
   } @else {
@@ -13,7 +19,15 @@
     @if (tableRowTemplate) {
     <ng-container *ngTemplateOutlet="tableRowTemplate" />
     } @else { @for (tableItem of tableItems; let index = $index; track index) {
+    @if(isEditing() || isDeleting()) {
+    <ng-container
+      *ngComponentOutlet="
+        getDisplayActionRow(tableItem, tableHeaders).component;
+        inputs: getDisplayActionRow(tableItem, tableHeaders).inputs
+      "
+    />
+    } @else {
     <pg-table-row [headers]="tableHeaders" [item]="tableItem" />
-    } }
+    } }}
   </tbody>
 </table>

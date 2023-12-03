@@ -2,6 +2,7 @@
   <pg-table
     [tableHeaders]="airplaneHeaders"
     [tableItems]="airplanes"
+    [isAdmin]="true"
     (sort)="onSortAirplanes()"
   >
     <div class="shell-banner">Airplanes Simple Table</div>
